@@ -4,6 +4,7 @@ import threading
 
 CONFIDENCE = 0.9
 TIME_TO_SLEEP = 1472 # 64 durability x 23s/catch = 1472
+SCREENSHOT_FILE_NAME = 'alt_rod_screenshot.png'
 
 def main():
 
@@ -21,7 +22,7 @@ def main():
     count = 0
     for i in range(9):
         try:
-            pag.locate('auto-fisher\\rod_screenshot.png', pag.screenshot(), confidence=CONFIDENCE)
+            pag.locate(f'auto-fisher\\{SCREENSHOT_FILE_NAME}', pag.screenshot(), confidence=CONFIDENCE)
             print('located fishing rod, sleeping 10s')
             time.sleep(TIME_TO_SLEEP) # wait until fishing rod breaks
             pag.press(f'{count+1}')
